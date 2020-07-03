@@ -24,3 +24,9 @@ Route::get('/data-tables', function()
 {
     return view('dataTables');
 });
+
+Route::get('/pertanyaan', 'pertanyaanController@index');
+
+Route::get('/pertanyaan/create', 'pertanyaanController@create');
+
+Route::post('/pertanyaan', 'pertanyaanController@store');
