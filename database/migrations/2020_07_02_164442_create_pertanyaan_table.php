@@ -18,8 +18,7 @@ class CreatePertanyaanTable extends Migration
             $table->string('judul');
             $table->string('isi',300);
             $table->dateTimeTz('tanggal_dibuat')->nullable();
-            $table->dateTimeTz('created_diperbarui')->nullable();
-            $table->timestamps();
+            $table->dateTimeTz('tanggal_diperbarui')->nullable();
         });
     }
 

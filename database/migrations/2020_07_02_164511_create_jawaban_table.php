@@ -17,10 +17,9 @@ class CreateJawabanTable extends Migration
             $table->bigIncrements('id');
             $table->string('isi',300);
             $table->dateTimeTz('tanggal_dibuat')->nullable();
-            $table->dateTimeTz('created_diperbarui')->nullable();
+            $table->dateTimeTz('tanggal_diperbarui')->nullable();
             $table->unsignedBigInteger('pertanyaan_id');
             $table->foreign('pertanyaan_id')->references('id')->on('pertanyaan');
-            $table->timestamps();
         });
     }
 
