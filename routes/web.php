@@ -30,3 +30,7 @@ Route::get('/pertanyaan', 'pertanyaanController@index');
 Route::get('/pertanyaan/create', 'pertanyaanController@create');
 
 Route::post('/pertanyaan', 'pertanyaanController@store');
+
+Route::get('jawaban/{id}', 'jawabanController@index');
+
+Route::post('jawaban/{id}', 'jawabanController@store');
