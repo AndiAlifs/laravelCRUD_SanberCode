@@ -17,7 +17,7 @@
 
 
 @section('content')
-    <div class="card card-primary">
+    <div class="card card-primary mx-auto" style="width: 90%;">
         <div class="card-header">
         <h3 class="card-title">Buat pertanyaan</h3>
         </div>
@@ -27,9 +27,20 @@
             <div class="card-body">  
                     @csrf
                     <label for="judul">Judul Pertanyaan</label>
-                    <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukkan Judul Pertanyaan">
+                    <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukkan Judul Pertanyaan" required>
                     <label for="isi">Isi Pertanyaan</label>
-                    <textarea class="form-control" rows="3" id="isi" name="isi" placeholder="Masukkan Isi Pertanyaan"></textarea>
+                    
+                    <textarea class="form-control" rows="5" id="isi" name="isi" placeholder="Masukkan Isi Pertanyaan" required></textarea>
+
+                    <label>Tanggal Dibuat:</label>
+                    <div class="form-group">
+                        <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
+                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4"/>
+                            <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            </div>
+                        </div>
+                    </div>
             </div>
             <!-- /.card-body -->
 
@@ -40,3 +51,13 @@
     </div>
     <!-- /.card -->
 @endsection
+
+@push('script')
+    <script>
+        $(function () {
+            $('#datetimepicker4').datetimepicker({
+                format: 'L'
+            });
+        });
+    </script>
+@endpush
