@@ -22,7 +22,9 @@ class pertanyaanController extends Controller{
     {   
         $array_baru = array(
             'judul' => $request['judul'], 
-            'isi' => $request['isi'], 
+            'isi' => $request['isi'],
+            'tanggal_dibuat' => $request['tanggal_dibuat'],
+
         );
         $new_item = pertanyaanModel::save($array_baru);
         return redirect('/pertanyaan');
